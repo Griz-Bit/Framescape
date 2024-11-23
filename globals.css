@@ -1,0 +1,414 @@
+/*
+globals.css
+Copyright (C) 2024 Mughil RK.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Fonts CSS Below */
+.montserrat {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.lexend {
+    font-family: "Lexend", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+/* End of Fonts CSS */
+
+:root {
+    --width: 100vw;
+    --height: 100vh;
+    --width-image: 100%;
+    --height-image: 100%;
+
+    --main-radius: 5px;
+    --main-padding: 5px;
+
+    --border-radius: 8px;
+
+    --detail-section-height: 90vh;
+    --detail-sections-spacing: 16px;
+    --detail-finals-spacing: 8px;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+}
+
+
+html {
+    background: #171717;
+}
+
+html, body {
+    overflow: scroll;
+    min-height: var(--height);
+    min-width: var(--width);
+    max-height: var(--height);
+    height: var(--height);
+    max-width: var(--width);
+    width: var(--width);
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    padding: none;
+    color: #ffffff;
+}
+
+h1 {
+    max-height: 20px !important;
+    padding: 5px !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+div {
+    flex-direction: column;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+    
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+
+
+/* Navbar CSS Below */
+header {
+    all: unset;
+    position: fixed;
+    background: #08080861;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--header-height);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.icon {
+    height: 30px;
+    width: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+header img.icon:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar a {
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    height: 44px;
+
+    color: #ffffff;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+    margin-right: 80px;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar a * {
+    margin: 0;
+}
+.navbar a p {
+    font-size: 18px;
+}
+.navbar a caption {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.navbar a:hover {
+    font-weight: 700 !important;
+    transform: scale(1.1, 1.1) !important;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+
+
+
+
+
+.pseudosection {
+    /* all: unset; */
+    display: flex;
+    flex-direction: row;
+    
+    
+    min-height: var(--height);
+    min-width: var(--width);
+    max-height: var(--height);
+    height: var(--height);
+    max-width: var(--width);
+    width: var(--width);
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-snap-align: start;
+}
+
+.pseudosection::-webkit-scrollbar {
+    display: none;
+}
+    
+/* Hide scrollbar for IE, Edge and Firefox */
+.pseudosection {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.pseudosection {
+    display: flex;
+    flex-direction: row;
+    
+    min-height: var(--height);
+    min-width: var(--width);
+    max-height: var(--height);
+    height: var(--height);
+    max-width: var(--width);
+    width: var(--width);
+
+    overflow: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* Remove the line below for  */
+    scroll-snap-stop: always;
+}
+
+.pseudosection>section {
+    position: relative;
+    display: flex;
+    scroll-snap-align: start;
+    
+    min-height: var(--height);
+    min-width: var(--width);
+    max-height: var(--height);
+    height: var(--height);
+    max-width: var(--width);
+    width: var(--width);
+}
+
+.pseudosection>section>div {
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    min-height: var(--height-image);
+    min-width: var(--width-image);
+    max-height: var(--height-image);
+    height: var(--height-image);
+    max-width: var(--width-image);
+    width: var(--width-image);
+}
+
+.pseudosection.reverse {
+    flex-direction: row-reverse !important;
+}
+
+.lander {
+    flex-direction: column;
+    font-size: 100px !important;
+}
+
+/* The following CSS is for the sections to make them distinguishable and SHOULD BE CUSTOMIZED. Remove them for your own styles. */
+
+.pseudosection section div * {
+    position: relative;
+    z-index: 3;
+}
+
+.pseudosection section div h1 {
+    color: #ffffff;
+    font-size: 64px;
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(10%px);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+.info {
+    height: calc(100vw - var(--header-height));
+    display: flex;
+    flex-direction: row;
+}
+
+
+.bg {
+    background: #141414;
+}
+
+.sectionA, .sectionB, .sectionC {
+    background-size: cover !important;
+    background-position: center !important;
+    /* To prevent selection of any element */
+    user-select: none;
+    -moz-user-select: none;
+    pointer-events: none;
+}
+
+.sectionA {
+    background-image: url(assets/tokyostation/tokyostation.jpg);
+}
+.sectionB {
+    background: url(assets/daikokupa/daikokupa.jpg);
+}
+.sectionC {
+    background-image: url(assets/izuskyline/izuskyline.jpg);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--detail-sections-spacing);
+    padding: var(--detail-sections-spacing);
+    
+    margin-top: auto;
+    min-height: calc(var(--detail-section-height) - 2 * var(--detail-sections-spacing)) !important;
+    height: calc(var(--detail-section-height) - 2 * var(--detail-sections-spacing)) !important;
+    max-height: calc(var(--detail-section-height) - 2 * var(--detail-sections-spacing)) !important;
+    min-width: calc(100vw - 2 * var(--detail-sections-spacing)) !important;
+    width: calc(100vw - 2 * var(--detail-sections-spacing)) !important;
+    max-width: calc(100vw - 2 * var(--detail-sections-spacing)) !important;
+    overflow: hidden;
+}
+.container * {
+    color: #ffffff;
+}
+
+.highlight {
+    color: #4Adbc8 !important;
+    font-weight: 700;
+}
+
+.container .horizontal {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: var(--detail-sections-spacing);
+
+    height: 100% !important;
+    width: 100% !important;
+}
+.container .vertical {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--detail-sections-spacing);
+    height: 100% !important;
+    width: 100% !important;
+}
+.container * {
+    flex: 1;
+    filter: blur(0);
+    transform: translateY(0);
+
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+
+    @starting-style {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translateY(20%);
+    }
+}
+
+.container>div {
+    flex: 1;
+}
+
+.container .final {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--detail-finals-spacing);
+    align-items: center;
+    justify-content: center;
+
+    height: calc(100% - 2 * var(--detail-finals-spacing));
+    width: calc(100% - 2 * var(--detail-finals-spacing));
+    padding: var(--detail-finals-spacing);
+
+    border-radius: var(--border-radius) !important;
+
+    background-color: #262626;
+    margin: 0;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.final img {
+    flex: 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--border-radius);
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+}
+
+.final p {
+    line-height: 1.5;
+    font-weight: 500;
+    padding-left: var(--detail-finals-spacing);
+    padding-right: var(--detail-finals-spacing);
+    margin: 0;
+    margin-top: 10px;
+}
